@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E9DADA"
+    android:backgroundTint="#A29797"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/passEdit"
+        android:layout_width="215dp"
+        android:layout_height="55dp"
+        android:layout_margin="1dp"
+        android:autofillHints="password"
+        android:ems="10"
+        android:hint="@string/password"
+        android:inputType="text|textPassword"
+        android:padding="1dp"
+        android:textColor="#FBFAFA"
+        android:textColorHint="#666464"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.403"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userEdit"
+        app:layout_constraintVertical_bias="0.067" />
+
+    <EditText
+        android:id="@+id/userEdit"
+        android:layout_width="215dp"
+        android:layout_height="55dp"
+        android:layout_margin="1dp"
+        android:autofillHints="Username"
+        android:contentDescription="@string/username"
+        android:ems="10"
+        android:hint="@string/username"
+        android:inputType="text"
+        android:padding="1dp"
+        android:textColor="#F4EFEF"
+        android:textColorHint="#666464"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.403"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.054" />
+
+    <Button
+        android:id="@+id/loginBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#A29797"
+        android:contentDescription="@string/login"
+        android:drawableTint="#141414"
+        android:foregroundTint="#050505"
+        android:text="@string/login"
+        android:textColor="#101010"
+        android:textColorLink="#A29797"
+        app:iconTint="#0B0B0B"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/passEdit"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/passEdit"
+        app:layout_constraintTop_toBottomOf="@+id/passEdit"
+        app:layout_constraintVertical_bias="0.043" />
+
+    <TextView
+        android:id="@+id/passwordLbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="password"
+        android:text="@string/password"
+        android:textColor="#161414"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/passEdit"
+        app:layout_constraintEnd_toEndOf="@+id/passEdit"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/passEdit"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageButton
+        android:id="@+id/seePassBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#A29797"
+        android:contentDescription="@string/see_password"
+        android:foregroundTint="#0B0B0B"
+        app:layout_constraintBottom_toBottomOf="@+id/passEdit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintStart_toEndOf="@+id/passEdit"
+        app:layout_constraintTop_toTopOf="@+id/passEdit"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@android:drawable/ic_menu_search"
+        app:tint="#262525" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="username"
+        android:text="@string/username"
+        android:textColor="#161414"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/userEdit"
+        app:layout_constraintEnd_toEndOf="@id/userEdit"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/userEdit"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.983" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="0dp"
+        android:contentDescription="Title"
+        android:padding="0dp"
+        android:paddingStart="0dp"
+        android:paddingLeft="0dp"
+        android:paddingTop="0dp"
+        android:paddingEnd="0dp"
+        android:paddingRight="0dp"
+        android:paddingBottom="0dp"
+        android:text="@string/welcome_to_android_ui"
+        android:textColor="#161414"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.427"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.083"
+        app:layout_marginBaseline="0dp" />
+
+    <Spinner
+        android:id="@+id/spinnerOptions"
+        android:layout_width="199dp"
+        android:layout_height="59dp"
+        android:backgroundTint="#161414"
+        android:entries="@array/simple_options"
+        android:foregroundTint="#2E2828"
+        android:textColor="#0D0C0C"
+        android:textColorHint="#A99C9C"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/acTxtView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/acTxtView"
+        app:layout_constraintTop_toBottomOf="@+id/acTxtView"
+        app:layout_constraintVertical_bias="0.102" />
+
+    <Button
+        android:id="@+id/nextBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:contentDescription="@string/next"
+        android:text="@string/next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/gearToggleBtn"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/prevBtn"
+        app:layout_constraintTop_toBottomOf="@+id/imageSwitcher"
+        app:layout_constraintVertical_bias="0.297" />
+
+    <AutoCompleteTextView
+        android:id="@+id/acTxtView"
+        android:layout_width="199dp"
+        android:layout_height="59dp"
+        android:contentDescription="@string/Fruits"
+        android:hint="@string/try_typing_bananas"
+        android:textColor="#FDFBFB"
+        android:textColorHint="#666464"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.834"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passEdit"
+        app:layout_constraintVertical_bias="0.378" />
+
+    <ImageSwitcher
+        android:id="@+id/imageSwitcher"
+        android:layout_width="118dp"
+        android:layout_height="110dp"
+        android:inAnimation="@android:anim/fade_in"
+        android:outAnimation="@android:anim/fade_out"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.035"
+        app:layout_constraintStart_toStartOf="@+id/displayImage"
+        app:layout_constraintTop_toBottomOf="@+id/passEdit"
+        app:layout_constraintVertical_bias="0.455">
+
+    </ImageSwitcher>
+
+    <Button
+        android:id="@+id/prevBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:contentDescription="@string/previous"
+        android:text="@string/previous"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageSwitcher"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/displayImage"
+        app:layout_constraintTop_toBottomOf="@+id/imageSwitcher"
+        app:layout_constraintVertical_bias="0.297" />
+
+    <ImageView
+        android:id="@+id/displayImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/displaypicture"
+        tools:layout_editor_absoluteX="14dp"
+        tools:layout_editor_absoluteY="518dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ToggleButton
+        android:id="@+id/gearToggleBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#A29797"
+        android:contentDescription="@string/geartoggle"
+        android:text="@string/geartoggle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/spinnerOptions"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/spinnerOptions"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerOptions"
+        app:layout_constraintVertical_bias="0.015" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
