@@ -1,0 +1,4 @@
+<resources>
+    <string name="welcome_message">¡Bienvenido al Laboratorio de XML!</string>
+    <string name="button_text">Presióname</string>
+</resources>
