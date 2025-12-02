@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.rngym.myapplication.GameView
+        android:id="@+id/gameView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <FrameLayout
+        android:id="@+id/hudOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center"
+            android:layout_marginTop="20dp"
+            android:text="0"
+            android:textColor="#FFFFFF"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            android:shadowColor="#000000"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="4" />
+
+        <TextView
+            android:id="@+id/tvLevel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center"
+            android:layout_marginTop="75dp"
+            android:text="LVL 1"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:alpha="0.3"
+            android:shadowColor="#000000"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2" />
+
+        <TextView
+            android:id="@+id/tvCombo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center"
+            android:layout_marginTop="-25dp"
+            android:layout_marginEnd="-35dp"
+            android:rotation="-15"
+            android:shadowColor="#000000"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="4"
+            android:text="x5"
+            android:textColor="#FFD700"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:visibility="invisible" />
+
+        <!-- LEFT: EXP BAR -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:layout_marginStart="15dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/expBarContainer"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="bottom" />
+
+                <TextView
+                    android:id="@+id/tvExpText"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="0/10"
+                    android:textColor="#FFFFFF"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:gravity="center" />
+            </LinearLayout>
+
+            <!-- EXPERIENCE label - RIGHT of bar -->
+            <TextView
+                android:id="@+id/tvExpLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="-20dp"
+                android:text="E\nX\nP"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp"
+                android:lineSpacingExtra="1dp"
+                android:gravity="center"
+                android:alpha="0.8" />
+        </LinearLayout>
+
+        <!-- RIGHT: STRESS BAR -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="-25dp"
+            android:orientation="horizontal">
+
+            <!-- STRESS label - LEFT of bar -->
+            <TextView
+                android:id="@+id/tvStressLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="10dp"
+                android:text="S\nT\nR\nE\nS\nS"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp"
+                android:lineSpacingExtra="3dp"
+                android:gravity="center"
+                android:alpha="0.8" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/stressBarContainer"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="bottom" />
+
+                <TextView
+                    android:id="@+id/tvStressText"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="30dp"
+                    android:text="0/100"
+                    android:textColor="#FFFFFF"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:gravity="center" />
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- TITLE SCREEN -->
+    <LinearLayout
+        android:id="@+id/titleOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#DD000000"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="40dp"
+        android:visibility="visible">
+
+        <TextView
+            android:text="WallPAWng"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textSize="50dp"
+            android:textStyle="bold"
+            android:fontFamily="roboto"
+            android:letterSpacing="0.15"
+            android:shadowColor="#FF1493"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="15"
+            android:layout_marginBottom="80dp" />
+
+        <Button
+            android:id="@+id/btnPlay"
+            android:layout_width="220dp"
+            android:layout_height="65dp"
+            android:text="PLAY"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="18dp" />
+
+        <Button
+            android:id="@+id/btnSettings"
+            android:layout_width="220dp"
+            android:layout_height="65dp"
+            android:text="SETTINGS"
+            android:textSize="20sp"
+            android:layout_marginBottom="18dp" />
+
+        <Button
+            android:id="@+id/btnCredits"
+            android:layout_width="220dp"
+            android:layout_height="65dp"
+            android:text="CREDITS"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <!-- SETTINGS -->
+    <LinearLayout
+        android:id="@+id/settingsOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#DD000000"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="40dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SETTINGS"
+            android:textColor="#FFFFFF"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="40dp" />
+
+        <CheckBox
+            android:id="@+id/checkVibration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vibration"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:checked="true"
+            android:layout_marginBottom="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sound Volume"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:layout_marginBottom="10dp" />
+
+        <SeekBar
+            android:id="@+id/seekSound"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="80"
+            android:layout_marginBottom="40dp" />
+
+        <Button
+            android:id="@+id/btnSettingsBack"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:text="BACK"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <!-- UPGRADE OVERLAY -->
+    <LinearLayout
+        android:id="@+id/upgradeOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#DD000000"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="20dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CHOOSE AN UPGRADE"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="30dp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/upgradeCard1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            app:cardBackgroundColor="#333333"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/upgradeTitle1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Upgrade 1"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/upgradeDesc1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Description"
+                    android:textColor="#CCCCCC"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/upgradeCard2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            app:cardBackgroundColor="#333333"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/upgradeTitle2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Upgrade 2"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/upgradeDesc2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Description"
+                    android:textColor="#CCCCCC"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/upgradeCard3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="#333333"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/upgradeTitle3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Upgrade 3"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/upgradeDesc3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Description"
+                    android:textColor="#CCCCCC"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <!-- GAME OVER OVERLAY -->
+    <LinearLayout
+        android:id="@+id/gameOverOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#DD000000"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="40dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GAME OVER"
+            android:textColor="#FF6B6B"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="40dp"
+            android:shadowColor="#000000"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="4" />
+
+        <TextView
+            android:id="@+id/tvFinalScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Final Score: 0"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textAlignment="center"
+            android:layout_marginBottom="40dp" />
+
+        <Button
+            android:id="@+id/btnRestart"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:text="MAIN MENU"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</FrameLayout>
